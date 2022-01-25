@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+body {
+	margin: 0;
+	/* font-family: cursive; */
+	font-family: 'Montserrat', sans-serif;
+}
+.home{
+	background-image: url('images/banner.jpg');
+	height: 100vh;
+	background-color: #f2f2f2;
+}
+#navBar {
+	padding-left: 70px;
+	padding-right: 70px;
+	/* color: #555; */
+}
+.lightBg{
+	background-color: #dddada;
+}
+#navBar:hover{
+	background-color: #a5a4a4;
+	/* color: black; */
+}
+.nav-link{
+	text-decoration: none;
+	color: #333131 !important;
+	font-size: 15px;
+	margin-right: 15px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.nav-link:hover{
+	color: #ec2b2b !important
+}
+input#search{
+	background-color: transparent;
+	border: none;
+	width: 100%;
+	padding-left: 0;
+}
+input::placeholder, textarea::placeholder{
+	color: #333131  !important;
+	font-size: 15px !important;
+	font-weight: bold !important;
+	opacity: 1;
+}
+input#search:focus{
+	outline: none !important;
+}
+.formContainer{
+	width: 100px;
+}
+.small-line{
+	height: 2px;
+	width: 100%;
+	background-color: #333131 ;
+}
+.navHor{
+	width: 100%;
+	height: 1px;
+	background-color: #acafac;
+}
+.logo{
+	width: 250px;
+}
+.title{
+	padding-left: 70px;
+	padding-right: 70px;
+	padding-top: 80px;
+}
+.canode-title{
+	background-color: rgb(236, 43, 43);
+	border-radius: 10px;
+	padding: 90px 40px 90px 40px;
+	font-size: 300px;
+	width: 500px;
+	color: #f2f2f2;
+}
+.about{
+	background: url("/images/about.jpg");
+	padding-left: 70px;
+	padding-right: 70px;
+	padding-top: 80px;
+}
+.row{
+	max-width: 100%;
+}
+.headerAbout{
+	font-size: 35px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.headerLine{
+	width: 90px;
+	height: 5px;
+	background-color: #ec2b2b;
+}
+.aboutContent{
+	padding-top: 25px;
+}
+.aboutContent > p{
+	/* font-weight: 400; */
+	text-align: justify;
+	font-size: 18px;
+    line-height: 26px;
+    color: #999999;
+    padding: 10px 0;
+    overflow: hidden
+}
+.hexagon {
+	position: relative;
+	width: 280px;
+	height: 140px;
+	background: #9b9898;
+	margin: 144px auto;
+}
+.hexagon::before,
+.hexagon::after {
+	content: "";
+	position: absolute;
+	border-left: 140px solid transparent;
+	border-right: 140px solid transparent;
+}
+.hexagon::before {
+	bottom: 100%;
+	border-bottom: 80px solid #9b9898;
+}
+.hexagon::after {
+	top: 100%;
+	border-top: 80px solid #9b9898;
+}
+.logoAbout{
+	position: relative;
+	top: 35px;
+	/* width: 380px;  */
+}
+.services{
+	padding-left: 70px;
+	padding-right: 70px;
+	padding-top: 80px;
+	background: /* url('images/banner.jpg');*/ #f2f2f7;
+	/* background-image: radial-gradient(#b1afaf 1px, transparent 0);
+	background-size: 15px 20px;
+	background-position: -19px -19px; */
+}
+.flex-container{
+	display: flex;
+	flex-wrap: wrap;
+	/* background-color: DodgerBlue; */
+	justify-content: center;
+	margin-top: 20px;
+}
+.flex-container > div{
+	/* background-color: #f1f1f1; */
+	width: 250px;
+	/* height: 350px; */
+	margin: 20px;
+	/* text-align: center; */
+	/* line-height: 75px; */
+	padding: 25px;
+	color: #404042;
+	background: #fff;
+}
+.js-scroll{
+	border: 1px solid #c9c7c7;
+	border-radius: 5px;
+	box-shadow: 0px 0px 2px 2px #c9c7c7;
+	transition: transform 0.7s;
+}
+.js-scroll:hover{
+	transform: scale(1.1);
+}
+.qualities-icon{
+	margin-bottom: 20px;
+	/* border-radius: 50%; */
+}
+.qualities-icon > img{
+	width: 100%;
+}
+.qualities-content > h6{
+	font-size: 20px;
+	line-height: 50px;
+	text-transform: uppercase;
+}
+.qualities-content > p, .qualities-content > ul{
+	line-height: 25px;
+	text-align: justify;
+	font-size: 17px !important;
+}
+.contact{
+	padding: 50px 70px 70px;
+}
+.form{
+	margin-bottom: 10px;
+}
+.form > div > input{
+	padding: 15px;
+	border: 1px solid #acafac;
+	background-color: #f2f2f7;
+	width: 100%;
+}
+.form > textarea{
+	margin-left: 10px;
+	padding: 15px;
+	border: 1px solid #acafac;
+	background-color: #f2f2f7;
+	width: 100%;
+}
+.form > input[type=button]{
+	width: 100%;
+	margin-left: 10px;
+	padding: 15px;
+	font-size: 15px !important;
+	color: #f2f2f2;
+	background-color: #ec2b2b;
+	border: 1px solid #acafac;
+	font-weight: bold;
+}
+.form > div > input::placeholder, .form > textarea::placeholder{
+	color: #858383 !important;
+}
+.form > div{
+	margin-left: 10px;
+	padding: 0;
+}
+.map{
+	background-color: #f2f2f7;
+	width: 100%;
+}
+iframe{
+	width: 100%;
+	height: 100%;
+}
+.map > .row > div > div > h2 {
+	font-size: 50px;
+}
+.icons{
+	font-size: 18px;
+	padding-top: 30px;
+}
+.withRoundBorder{
+	border: 2px solid rgb(61, 60, 60);
+	margin-left: 15px;
+	border-radius: 50%;
+	padding-top: 10px;
+	padding-left: 15px;
+	height: 50px;
+	width: 50px;
+}
+.icons > .col3{
+	border: 2px solid rgb(61, 60, 60);
+	margin-left: 15px;
+	border-radius: 50%;
+	padding-top: 10px;
+	padding-left: 12px;
+	height: 50px;
+	/* width: 150px; */
+}
+.display-4{
+	font-weight: 500;
+}
+.icon-title{
+	line-height: 15px; 
+	color: #bdb9b9;
+}
+.icon-body{
+	font-size: 15px;
+}
+.vertLine{
+	margin-top: 30px;
+	background-color: #919494;
+	width: 1px;
+}
+.map-horizontal-line{
+	margin-top: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+	.title{
+		width: 100%;
+		/* background-color: aqua; */
+		padding: 10px 0 10px 0;
+	}
+	#about, #services, #home, #contact{
+		width: 100%;
+	}
+	.canode-title{
+		width: 90%;
+		margin: auto;
+	}
+	.display-4{
+		font-size: 2rem !important;
+	}
+	#navBar {
+		padding-left: 0px;
+		padding-right: 0px;
+		/* color: #555; */
+	}
+	.about{
+		padding-left: 10px;
+		padding-right: 0px;
+		padding-top: 50px;
+	}
+	.services{
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-top: 40px;
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.flex-container > div{
+		width: 95%;
+		/* text-align: center; */
+		/* line-height: 75px; */
+		padding: 25px;
+		color: #404042;
+		background: #fff;
+	}
+	.contact{
+		padding: 50px 20px 20px;
+	}
+	.form{
+		margin-bottom: 0;
+	}
+	.form > div > input, .form > textarea{
+		margin-bottom: 10px;
+		width: 100%;
+	}
+	.map-div{
+		width: 100%;
+	}
+	
+	.address-icon-div{
+		margin-bottom: 10px;
+	}
+	.vertLine{
+		display: none;
+	}
+	.navbar{
+		width: 100%;
+	}
+}
