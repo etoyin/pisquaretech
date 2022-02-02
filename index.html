@@ -1,306 +1,983 @@
-<!-- <?php 
-if(isset($_POST['submit'])){
-    $to = "toyinadesina2015@gmail.com"; // this is your Email address
-    $from = $_POST['email']; // this is the sender's Email address
-    $name = $_POST['name'];
-    $subject = "Form submission: From My Website";
-    $subject2 = "Copy of your form submission from Adesina Toyin portfolio site";
-    $message = `
-                <html>
-                    <head>
-                        <title>$subject</title>
-                    </head>
-                    <body>
-                        <p>`.$name . " wrote the following:" . "\n\n" .$_POST['message'].`</p>
-                    </body>
-                </html>
-                `;
-    $message2 = `
-                <html>
-                    <head>
-                        <title>$subject2</title>
-                    </head>
-                    <body>
-                        <p>Here is a copy of your message ` . $name . "\n\n" . $_POST['message'].`</p>
-                    </body>
-                </html>
-                `;
-
-    $headers[] = 'MIME-Version: 1.0';
-    $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-
-    // Additional headers
-    $headers[] = 'To: Toyin <toyinadesina2015@gmail.com>';
-    $headers[] = 'From:'.$name. ' '.$from;
-
-    $headers2[] = 'MIME-Version: 1.0';
-    $headers2[] = 'Content-type: text/html; charset=iso-8859-1';
-
-    // Additional headers
-    $headers2[] = 'To: Toyin <toyinadesina2015@gmail.com>';
-    $headers2[] = 'From:'.$name. ' '.$to;
-
-    // $headers = "From:" . $from;
-    // $headers2 = "From:" . $to;
-    mail($to,$subject,$message,implode("\r\n", $headers));
-    //mail($from,$subject2,$message2,implode("\r\n", $headers2)); // sends a copy of the message to the sender
-    echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
-    // You can also use header('Location: thank_you.php'); to redirect to another page.
-    // You cannot use header and echo together. It's one or the other.
-    }
-?> -->
-
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="js/jquery.js"></script>
-        <script src="js/script.js"></script>
-        <script src="js/particles_mini.js"></script>
-        <script src="js/particle.js"></script>
-        <script src="js/fontAwesome.js"></script>
-        <!-- <script src="js/canvas.js"></script> -->
-    </head>
-    <body>
-        <div class="view" id="home">
-            <div id="particles-js" class="home">
-                <div class="title">
-                    <h1 style=" font-size: 38px;">Hello, I'm <span class="active">Toyin Adesina.</span><br/>
-                        I'm a Full-Stack Web Developer/ Social Media Manager.
-                    </h1>
-                    <div class="button">
-                        <span>
-                            View My Work
-                        </span>
-                        <span class="arrow">&#8594;</span>
-                    </div>
-                </div>
-            </div>
-            <div class="navbar_and_line">
-                <div class="navbar">
-                    <div class="pad-everything">
-                        <a href="#home"><span class="menu active" data="home">Home</span></a>
-                        <a href="#about"><span class="menu" data="about">About</span></a>
-                        <a href="#projects"><span class="menu" data="portfolio">Portfolio</span></a>
-                        <a href="#blog"><span class="menu" data="blog">Blog</span></a>
-                        <a href="#contact"><span class="menu" data="contact">Contact</span></a>
-                    </div>
-                </div>
-                <div class="responsive_nav">
-                    <div class="pad-everything">
-                        <div class="nav-icon open"><i style="font-size: 30px;" class="fa fa-navicon"></i></div>
-                        <div class="nav-icon close"><i style="font-size: 30px;" class="fa fa-close"></i></div>
-                        <div class="clickables">
-                            <a href="#home"><div class="menu active" data="home">Home</div></a>
-                            <a href="#about"><div class="menu" data="about">About</div></a>
-                            <a href="#projects"><div class="menu" data="portfolio">Portfolio</div></a>
-                            <a href="#blog"><div class="menu" data="blog">Blog</div></a>
-                            <a href="#contact"><div class="menu" data="contact">Contact</div></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="navLine"></div>
-            </div>
-            <div id="about" class="">
-                <div data="about" class="heading appear-div ">
-                    <h1 id="aboutHead" class="js-scroll">About</h1>
-                    <div class="line js-scroll"></div>
-                </div>
-                <div id="appear-div" class="appear-div flex-container">
-                    <div class="js-scroll" >
-                        <div class="qualities-icon">
-                            <img src="images/icons8-fast-64.png" alt="Fast Icon" title="Fast Icon" srcset=""/>
-                        </div>
-                        <div class="qualities-content">
-                            <h6>Social Media</h6>
-                            <p>I can help you manage your Page through content creation that will drive more traffic to your product(s).</p>
-                        </div>
-                    </div>
-                    <div class="js-scroll" >
-                        <div class="qualities-icon">
-                            <img src="images/icons8-fast-64.png" alt="Fast Icon" title="Fast Icon" srcset=""/>
-                        </div>
-                        <div class="qualities-content">
-                            <h6>Speed</h6>
-                            <p>I build websites that loads very fast and has a lag free interaction. This is my highest priority.</p>
-                        </div>
-                    </div>
-                    <div class="js-scroll" >
-                        <div class="qualities-icon">
-                            <img src="images/icons8-increase-50.png" alt="Dynamic Icon" title="Dynamic Icon" srcset=""/>
-                        </div>
-                        <div class="qualities-content">
-                            <h6>Dynamic</h6>
-                            <p>Enough of viewing static sites, I will help make websites that are "alive". Interactive and Dynamic Website.</p>
-                        </div>
-                    </div>
-                    <div class="js-scroll" >
-                        <div class="qualities-icon">
-                            <img src="images/icons8-responsive-65.png" alt="Responsive Icon" title="Responsive Icon" srcset=""/>
-                        </div>
-                        <div class="qualities-content">
-                            <h6>Responsiveness</h6>
-                            <p>Why will your website be adaptable to only one device. I build sites that are responsive on all devices ranging from Mobile Phones to "Mega" Screen Computers.</p>
-                        </div>
-                    </div>
-                    <div class="js-scroll" >
-                        <div class="qualities-icon">
-                            <img src="images/icons8-website-64.png" alt="Optimize search Icon" title="Optimize search Icon" srcset=""/>
-                        </div>
-                        <div class="qualities-content">
-                            <h6>SEO</h6>
-                            <p>During the fast loading time of my websites, they are easily seen on Search Engine through keyword searches.</p>
-                        </div>
-                    </div>
-                </div>
-                <div data="about" class="flex-container-2 appear-div ">
-                    <div class="myImgDiv js-scroll">
-                        <div class="avatar">
-                            <img src="images/Toyin-mirror.jpg" title="Adesina Oluwatoyin" alt="Adesina Toyin Picture">
-                        </div>
-                        <div class="avatar-content">
-                            <h6>Who's this guy?</h6>
-                            <p>I'm a Web Developer and a Social Media Manager, a freelance software engineer specialized in both front-end and back-end web development and also skilled in graphics design for Social Media content creation.</p>
-                            <a href="#contact">Let's make something special.</a>
-                        </div>
-                    </div>
-                    <div class="skills js-scroll" style="text-align: left;">
-                        <div class="chart">
-                            <div class="titleChart" style="width: 90%" >
-                                <div class="barChart" >CSS</div> 
-                            </div>
-                        </div>
-                        <div class="chart">
-                            <div class="titleChart" style="width: 90%" >
-                                <div class="barChart" >HTML</div> 
-                            </div>
-                        </div>
-                        <div class="chart">
-                            <div class="titleChart" style="width: 70%" >
-                                <div class="barChart" >JavaScript</div> 
-                            </div>
-                        </div>
-                        <div class="chart">
-                            <div class="titleChart" style="width: 90%" >
-                                <div class="barChart" >Jquery</div> 
-                            </div>
-                        </div>
-                        <div class="chart">
-                            <div class="titleChart" style="width: 70%" >
-                                <div class="barChart" >NodeJs</div> 
-                            </div>
-                        </div>
-                        <div class="chart">
-                            <div class="titleChart" style="width: 70%" >
-                                <div class="barChart" >SEO</div> 
-                            </div>
-                        </div>
-                        <div class="chart">
-                            <div class="titleChart" style="width: 70%" >
-                                <div class="barChart" >Facebook</div> 
-                            </div>
-                        </div>
-                        <div class="chart">
-                            <div class="titleChart" style="width: 70%" >
-                                <div class="barChart" >instagram</div> 
-                            </div>
-                        </div>
-                        <div class="chart">
-                            <div class="titleChart" style="width: 70%" >
-                                <div class="barChart" >Photoshop</div> 
-                            </div>
-                        </div>
-                        <div class="chart">
-                            <div class="titleChart" style="width: 90%" >
-                                <div class="barChart" >Google Docs</div> 
-                            </div>
-                        </div>
+<html class="html" lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-                    </div>             
-                </div>
-                <div id="projects" class="portfolio projects">
-                    <div data="portfolio" class="heading appear-div">
-                        <h1 id="aboutHead" class="js-scroll">Projects</h1>
-                        <div class="line js-scroll"></div>
-                    </div>
-                    <div data="portfolio" class="flex-container-3 appear-div portfolio-boxes">
-                        <!-- <div class="card-box" data-link="https://....">
-                            <img src="" alt="">
-                        </div> -->
-                    </div>
-                </div>
+	<title>Pi Square Tech Solutions &#8211; Get your custom websites, webapp, softwares, mobile app.</title>
+<meta name="robots" content="max-image-preview:large">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="Pi Square Tech Solutions &raquo; Feed" href="./feed/index.html">
+<link rel="alternate" type="application/rss+xml" title="Pi Square Tech Solutions &raquo; Comments Feed" href="./comments/feed/index.html">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":".\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style>img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./wp-includes/css/dist/block-library/style.min.css?ver=5.9" media="all">
+<style id="wp-block-library-theme-inline-css">.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-code>code{font-family:Menlo,Consolas,monaco,monospace;color:#1e1e1e;padding:.8em 1em;border:1px solid #ddd;border-radius:4px}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-group:where(.has-background){padding:1.25em 2.375em}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto;opacity:.4}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{padding:.5em;border:1px solid;word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}</style>
+<style id="global-styles-inline-css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}</style>
+<link rel="stylesheet" id="font-awesome-css" href="./wp-content/themes/oceanwp/assets/fonts/fontawesome/css/all.min.css?ver=5.15.1" media="all">
+<link rel="stylesheet" id="simple-line-icons-css" href="./wp-content/themes/oceanwp/assets/css/third/simple-line-icons.min.css?ver=2.4.0" media="all">
+<link rel="stylesheet" id="oceanwp-style-css" href="./wp-content/themes/oceanwp/assets/css/style.min.css?ver=3.1.2" media="all">
+<link rel="stylesheet" id="fontawesome-css" href="./wp-content/themes/oceanwp/inc/customizer/assets/css/fontawesome-all.min.css?ver=5.8.2" media="all">
+<link rel="stylesheet" id="oceanwp-google-font-roboto-slab-css" href="//fonts.googleapis.com/css?family=Roboto+Slab%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100i%2C200i%2C300i%2C400i%2C500i%2C600i%2C700i%2C800i%2C900i&#038;subset=latin&#038;display=swap&#038;ver=5.9" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="./wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.14.0" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="./wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.5.4" media="all">
+<link rel="stylesheet" id="elementor-post-49-css" href="./wp-content/uploads/elementor/css/post-49.css?ver=1643379888" media="all">
+<link rel="stylesheet" id="elementor-post-355-css" href="./wp-content/uploads/elementor/css/post-355.css?ver=1643793337" media="all">
+<link rel="stylesheet" id="oe-widgets-style-css" href="./wp-content/plugins/ocean-extra/assets/css/widgets.css?ver=5.9" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.9" media="all">
+<link rel="stylesheet" id="elementor-icons-shared-0-css" href="./wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3" media="all">
+<link rel="stylesheet" id="elementor-icons-fa-regular-css" href="./wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=5.15.3" media="all">
+<link rel="stylesheet" id="elementor-icons-fa-solid-css" href="./wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3" media="all">
+<script src="./wp-content/themes/oceanwp/assets/js/vendors/smoothscroll.min.js?ver=3.1.2" id="ow-smoothscroll-js"></script>
+<script src="./wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script src="./wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="./wp-json/index.html">
+<link rel="alternate" type="application/json" href="./wp-json/wp/v2/pages/355/index.html">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="./xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="./wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.9">
+<link rel="canonical" href="./index.html">
+<link rel="shortlink" href="./index.html">
+<link rel="alternate" type="application/json+oembed" href="./wp-json/oembed/1.0/embed/index.html?url=.%2F">
+<link rel="alternate" type="text/xml+oembed" href="./wp-json/oembed/1.0/embed/index.html?url=.%2F&#038;format=xml">
+<link rel="icon" href="./wp-content/uploads/2022/01/cropped-LogoMakr-9L6cVq-32x32.png" sizes="32x32">
+<link rel="icon" href="./wp-content/uploads/2022/01/cropped-LogoMakr-9L6cVq-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="./wp-content/uploads/2022/01/cropped-LogoMakr-9L6cVq-180x180.png">
+<meta name="msapplication-TileImage" content="./wp-content/uploads/2022/01/cropped-LogoMakr-9L6cVq-270x270.png">
+		<style id="wp-custom-css">.wpcf7-form input,.wpcf7-form textarea{text-align:center}.elementor-element.elementor-element-jtqnlxa .elementor-icon i{text-align:center}</style>
+		<!-- OceanWP CSS -->
+<style type="text/css">/* General CSS */a:hover,a.light:hover,.theme-heading .text::before,.theme-heading .text::after,#top-bar-content >a:hover,#top-bar-social li.oceanwp-email a:hover,#site-navigation-wrap .dropdown-menu >li >a:hover,#site-header.medium-header #medium-searchform button:hover,.oceanwp-mobile-menu-icon a:hover,.blog-entry.post .blog-entry-header .entry-title a:hover,.blog-entry.post .blog-entry-readmore a:hover,.blog-entry.thumbnail-entry .blog-entry-category a,ul.meta li a:hover,.dropcap,.single nav.post-navigation .nav-links .title,body .related-post-title a:hover,body #wp-calendar caption,body .contact-info-widget.default i,body .contact-info-widget.big-icons i,body .custom-links-widget .oceanwp-custom-links li a:hover,body .custom-links-widget .oceanwp-custom-links li a:hover:before,body .posts-thumbnails-widget li a:hover,body .social-widget li.oceanwp-email a:hover,.comment-author .comment-meta .comment-reply-link,#respond #cancel-comment-reply-link:hover,#footer-widgets .footer-box a:hover,#footer-bottom a:hover,#footer-bottom #footer-bottom-menu a:hover,.sidr a:hover,.sidr-class-dropdown-toggle:hover,.sidr-class-menu-item-has-children.active >a,.sidr-class-menu-item-has-children.active >a >.sidr-class-dropdown-toggle,input[type=checkbox]:checked:before{color:#ff3300}.single nav.post-navigation .nav-links .title .owp-icon use,.blog-entry.post .blog-entry-readmore a:hover .owp-icon use,body .contact-info-widget.default .owp-icon use,body .contact-info-widget.big-icons .owp-icon use{stroke:#ff3300}input[type="button"],input[type="reset"],input[type="submit"],button[type="submit"],.button,#site-navigation-wrap .dropdown-menu >li.btn >a >span,.thumbnail:hover i,.post-quote-content,.omw-modal .omw-close-modal,body .contact-info-widget.big-icons li:hover i,body div.wpforms-container-full .wpforms-form input[type=submit],body div.wpforms-container-full .wpforms-form button[type=submit],body div.wpforms-container-full .wpforms-form .wpforms-page-button{background-color:#ff3300}.thumbnail:hover .link-post-svg-icon{background-color:#ff3300}body .contact-info-widget.big-icons li:hover .owp-icon{background-color:#ff3300}.widget-title{border-color:#ff3300}blockquote{border-color:#ff3300}#searchform-dropdown{border-color:#ff3300}.dropdown-menu .sub-menu{border-color:#ff3300}.blog-entry.large-entry .blog-entry-readmore a:hover{border-color:#ff3300}.oceanwp-newsletter-form-wrap input[type="email"]:focus{border-color:#ff3300}.social-widget li.oceanwp-email a:hover{border-color:#ff3300}#respond #cancel-comment-reply-link:hover{border-color:#ff3300}body .contact-info-widget.big-icons li:hover i{border-color:#ff3300}#footer-widgets .oceanwp-newsletter-form-wrap input[type="email"]:focus{border-color:#ff3300}blockquote,.wp-block-quote{border-left-color:#ff3300}body .contact-info-widget.big-icons li:hover .owp-icon{border-color:#ff3300}input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,button[type="submit"]:hover,input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,button[type="submit"]:focus,.button:hover,#site-navigation-wrap .dropdown-menu >li.btn >a:hover >span,.post-quote-author,.omw-modal .omw-close-modal:hover,body div.wpforms-container-full .wpforms-form input[type=submit]:hover,body div.wpforms-container-full .wpforms-form button[type=submit]:hover,body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover{background-color:#ff3300}form input[type="text"],form input[type="password"],form input[type="email"],form input[type="url"],form input[type="date"],form input[type="month"],form input[type="time"],form input[type="datetime"],form input[type="datetime-local"],form input[type="week"],form input[type="number"],form input[type="search"],form input[type="tel"],form input[type="color"],form select,form textarea{padding:18px 15px 18px 15px}body div.wpforms-container-full .wpforms-form input[type=date],body div.wpforms-container-full .wpforms-form input[type=datetime],body div.wpforms-container-full .wpforms-form input[type=datetime-local],body div.wpforms-container-full .wpforms-form input[type=email],body div.wpforms-container-full .wpforms-form input[type=month],body div.wpforms-container-full .wpforms-form input[type=number],body div.wpforms-container-full .wpforms-form input[type=password],body div.wpforms-container-full .wpforms-form input[type=range],body div.wpforms-container-full .wpforms-form input[type=search],body div.wpforms-container-full .wpforms-form input[type=tel],body div.wpforms-container-full .wpforms-form input[type=text],body div.wpforms-container-full .wpforms-form input[type=time],body div.wpforms-container-full .wpforms-form input[type=url],body div.wpforms-container-full .wpforms-form input[type=week],body div.wpforms-container-full .wpforms-form select,body div.wpforms-container-full .wpforms-form textarea{padding:18px 15px 18px 15px;height:auto}form input[type="text"],form input[type="password"],form input[type="email"],form input[type="url"],form input[type="date"],form input[type="month"],form input[type="time"],form input[type="datetime"],form input[type="datetime-local"],form input[type="week"],form input[type="number"],form input[type="search"],form input[type="tel"],form input[type="color"],form select,form textarea,.select2-container .select2-choice,.woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single{border-color:#eeeeee}body div.wpforms-container-full .wpforms-form input[type=date],body div.wpforms-container-full .wpforms-form input[type=datetime],body div.wpforms-container-full .wpforms-form input[type=datetime-local],body div.wpforms-container-full .wpforms-form input[type=email],body div.wpforms-container-full .wpforms-form input[type=month],body div.wpforms-container-full .wpforms-form input[type=number],body div.wpforms-container-full .wpforms-form input[type=password],body div.wpforms-container-full .wpforms-form input[type=range],body div.wpforms-container-full .wpforms-form input[type=search],body div.wpforms-container-full .wpforms-form input[type=tel],body div.wpforms-container-full .wpforms-form input[type=text],body div.wpforms-container-full .wpforms-form input[type=time],body div.wpforms-container-full .wpforms-form input[type=url],body div.wpforms-container-full .wpforms-form input[type=week],body div.wpforms-container-full .wpforms-form select,body div.wpforms-container-full .wpforms-form textarea{border-color:#eeeeee}form input[type="text"]:focus,form input[type="password"]:focus,form input[type="email"]:focus,form input[type="tel"]:focus,form input[type="url"]:focus,form input[type="search"]:focus,form textarea:focus,.select2-drop-active,.select2-dropdown-open.select2-drop-above .select2-choice,.select2-dropdown-open.select2-drop-above .select2-choices,.select2-drop.select2-drop-above.select2-drop-active,.select2-container-active .select2-choice,.select2-container-active .select2-choices{border-color:#84c340}body div.wpforms-container-full .wpforms-form input:focus,body div.wpforms-container-full .wpforms-form textarea:focus,body div.wpforms-container-full .wpforms-form select:focus{border-color:#84c340}.theme-button,input[type="submit"],button[type="submit"],button,.button,body div.wpforms-container-full .wpforms-form input[type=submit],body div.wpforms-container-full .wpforms-form button[type=submit],body div.wpforms-container-full .wpforms-form .wpforms-page-button{border-radius:1px}/* Header CSS */#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner,.after-header-content .after-header-content-inner{height:125px}#site-navigation-wrap .dropdown-menu >li >a,.oceanwp-mobile-menu-icon a,.mobile-menu-close,.after-header-content-inner >a{line-height:125px}#site-header.has-header-media .overlay-header-media{background-color:rgba(0,0,0,0.5)}/* Top Bar CSS */#top-bar-wrap,.oceanwp-top-bar-sticky{background-color:#ff3300}#top-bar-wrap{border-color:#ff5522}#top-bar-wrap,#top-bar-content strong{color:#ffffff}#top-bar-content a,#top-bar-social-alt a{color:#ffffff}#top-bar-content a:hover,#top-bar-social-alt a:hover{color:#ffffff}#top-bar-social li a{color:#ffffff}#top-bar-social li a .owp-icon use{stroke:#ffffff}#top-bar-social li a:hover{color:#ff8844!important}#top-bar-social li a:hover .owp-icon use{stroke:#ff8844!important}/* Footer Widgets CSS */#footer-widgets{background-color:#f5f5f5}#footer-widgets,#footer-widgets p,#footer-widgets li a:before,#footer-widgets .contact-info-widget span.oceanwp-contact-title,#footer-widgets .recent-posts-date,#footer-widgets .recent-posts-comments,#footer-widgets .widget-recent-posts-icons li .fa{color:#777777}#footer-widgets li,#footer-widgets #wp-calendar caption,#footer-widgets #wp-calendar th,#footer-widgets #wp-calendar tbody,#footer-widgets .contact-info-widget i,#footer-widgets .oceanwp-newsletter-form-wrap input[type="email"],#footer-widgets .posts-thumbnails-widget li,#footer-widgets .social-widget li a{border-color:#aaaaaa}#footer-widgets .contact-info-widget .owp-icon{border-color:#aaaaaa}#footer-widgets .footer-box a,#footer-widgets a{color:#333333}/* Footer Bottom CSS */#footer-bottom{background-color:#ff3300}#footer-bottom,#footer-bottom p{color:#ffffff}#footer-bottom a:hover,#footer-bottom #footer-bottom-menu a:hover{color:#4d8221}/* Typography CSS */body{font-family:Roboto Slab;font-size:15px}#site-navigation-wrap .dropdown-menu >li >a,#site-header.full_screen-header .fs-dropdown-menu >li >a,#site-header.top-header #site-navigation-wrap .dropdown-menu >li >a,#site-header.center-header #site-navigation-wrap .dropdown-menu >li >a,#site-header.medium-header #site-navigation-wrap .dropdown-menu >li >a,.oceanwp-mobile-menu-icon a{text-transform:uppercase}#footer-widgets .footer-box .widget-title{color:#292929}#footer-bottom #copyright{font-size:13px;letter-spacing:1px}</style>
+</head>
 
-                <div class="blog" id="blog">
-                    <div data="blog" class="heading appear-div">
-                        <h1 id="aboutHead" class="js-scroll">Blog</h1>
-                        <div class="line js-scroll"></div>
-                    </div>
-                    <div data="blog" class="appear-div heading ">
-                        <div style="text-align: center; font-size: 40px; margin-bottom: 250px;" class="js-scroll">
-                            BLOG COMING SOON!!!
-                        </div>
-                    </div>
-                </div>
+<body class="home page-template-default page page-id-355 wp-custom-logo wp-embed-responsive oceanwp-theme dropdown-mobile default-breakpoint content-full-screen has-topbar page-header-disabled has-breadcrumbs no-margins elementor-default elementor-kit-49 elementor-page elementor-page-355" itemscope="itemscope" itemtype="https://schema.org/WebPage">
 
-                <div class="contact" id="contact">
-                    <div data="contact" class="heading-contact appear-div">
-                        <h1 id="aboutHead" class="js-scroll">CONTACT</h1>
-                        <div class="line-contact js-scroll"></div>
-                    </div>
-                    <p class="js-scrol">You want us to work together or you have a question?</p>
-                    <div data="contact" class="appear-div inputs clear-fix">
-                        <form action="index.php" method="post" class="js-scroll form" style="margin: auto;">
-                            <input type="text" name="name" placeholder="name"/><br/>
-                            <input type="text" name="email" placeholder="email"/><br/>
-                            <textarea name="message" placeholder="Message" id="" rows="10"></textarea>
-                        </form>
-                        <div class="submit js-scroll" type="submit">
-                            Submit
-                        </div>
-                        
-                    </div>
-                    <div class="goUp">
-                        <!-- <span class="arrow fas">&#xf102;</span> -->
-                        <a style="text-decoration: none; color: white;" href="#home">
-                            <i style='font-size:30px' class='fas'>&#xf102;</i>
-                        </a>
-                    </div>
-                </div>
-                <div class="social-div">
-                    <div class="social flex-container-4">
-                        <span>
-                            <a style="text-decoration: none; color: white;" target="_blank" href="https://web.facebook.com/emmanuel.t.adesina/">
-                                <svg fill="#fff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px"><path d="M 25 3 C 12.861562 3 3 12.861562 3 25 C 3 36.019135 11.127533 45.138355 21.712891 46.728516 L 22.861328 46.902344 L 22.861328 29.566406 L 17.664062 29.566406 L 17.664062 26.046875 L 22.861328 26.046875 L 22.861328 21.373047 C 22.861328 18.494965 23.551973 16.599417 24.695312 15.410156 C 25.838652 14.220896 27.528004 13.621094 29.878906 13.621094 C 31.758714 13.621094 32.490022 13.734993 33.185547 13.820312 L 33.185547 16.701172 L 30.738281 16.701172 C 29.349697 16.701172 28.210449 17.475903 27.619141 18.507812 C 27.027832 19.539724 26.84375 20.771816 26.84375 22.027344 L 26.84375 26.044922 L 32.966797 26.044922 L 32.421875 29.564453 L 26.84375 29.564453 L 26.84375 46.929688 L 27.978516 46.775391 C 38.71434 45.319366 47 36.126845 47 25 C 47 12.861562 37.138438 3 25 3 z M 25 5 C 36.057562 5 45 13.942438 45 25 C 45 34.729791 38.035799 42.731796 28.84375 44.533203 L 28.84375 31.564453 L 34.136719 31.564453 L 35.298828 24.044922 L 28.84375 24.044922 L 28.84375 22.027344 C 28.84375 20.989871 29.033574 20.060293 29.353516 19.501953 C 29.673457 18.943614 29.981865 18.701172 30.738281 18.701172 L 35.185547 18.701172 L 35.185547 12.009766 L 34.318359 11.892578 C 33.718567 11.811418 32.349197 11.621094 29.878906 11.621094 C 27.175808 11.621094 24.855567 12.357448 23.253906 14.023438 C 21.652246 15.689426 20.861328 18.170128 20.861328 21.373047 L 20.861328 24.046875 L 15.664062 24.046875 L 15.664062 31.566406 L 20.861328 31.566406 L 20.861328 44.470703 C 11.816995 42.554813 5 34.624447 5 25 C 5 13.942438 13.942438 5 25 5 z"/>
-                                </svg>
-                            </a>
-                        </span>
-                        <span>
-                            <a style="text-decoration: none; color: white;" target="_blank" href="https://www.instagram.com/etoyin.adesina/">
-                                <svg fill="#fff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px"><path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"/>
-                                </svg>
-                            </a>
-                        </span>
-                        <span>
-                            <a style="text-decoration: none; color: white;" target="_blank" href="https://codepen.io/etoyin">
-                                <svg fill="#fff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px"><path d="M 25 4 L 4 17.34375 L 4 32.652344 L 25 46 L 46 32.65625 L 46 17.34375 Z M 25 29.183594 L 19.066406 25.070313 L 25 21.023438 L 30.933594 25.070313 Z M 27 17.605469 L 27 9.949219 L 40.429688 18.484375 L 34.410156 22.65625 Z M 23 17.605469 L 15.589844 22.65625 L 9.570313 18.484375 L 23 9.949219 Z M 12.09375 25.042969 L 8 27.832031 L 8 22.203125 Z M 15.570313 27.453125 L 23 32.605469 L 23 40.050781 L 9.589844 31.527344 Z M 27 32.605469 L 34.429688 27.453125 L 40.410156 31.527344 L 27 40.050781 Z M 37.90625 25.042969 L 42 22.203125 L 42 27.832031 Z"/>
-                                </svg>
-                            </a>
-                        </span>
-                        <span>
-                            <a style="text-decoration: none; color: white;" target="_blank" href="https://wa.me/+2347081607729">
-                                <svg fill="#fff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px"><path d="M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 29.079097 3.1186875 32.88588 4.984375 36.208984 L 2.0371094 46.730469 A 1.0001 1.0001 0 0 0 3.2402344 47.970703 L 14.210938 45.251953 C 17.434629 46.972929 21.092591 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 21.278025 46 17.792121 45.029635 14.761719 43.333984 A 1.0001 1.0001 0 0 0 14.033203 43.236328 L 4.4257812 45.617188 L 7.0019531 36.425781 A 1.0001 1.0001 0 0 0 6.9023438 35.646484 C 5.0606869 32.523592 4 28.890107 4 25 C 4 13.390466 13.390466 4 25 4 z M 16.642578 13 C 16.001539 13 15.086045 13.23849 14.333984 14.048828 C 13.882268 14.535548 12 16.369511 12 19.59375 C 12 22.955271 14.331391 25.855848 14.613281 26.228516 L 14.615234 26.228516 L 14.615234 26.230469 C 14.588494 26.195329 14.973031 26.752191 15.486328 27.419922 C 15.999626 28.087653 16.717405 28.96464 17.619141 29.914062 C 19.422612 31.812909 21.958282 34.007419 25.105469 35.349609 C 26.554789 35.966779 27.698179 36.339417 28.564453 36.611328 C 30.169845 37.115426 31.632073 37.038799 32.730469 36.876953 C 33.55263 36.755876 34.456878 36.361114 35.351562 35.794922 C 36.246248 35.22873 37.12309 34.524722 37.509766 33.455078 C 37.786772 32.688244 37.927591 31.979598 37.978516 31.396484 C 38.003976 31.104927 38.007211 30.847602 37.988281 30.609375 C 37.969311 30.371148 37.989581 30.188664 37.767578 29.824219 C 37.302009 29.059804 36.774753 29.039853 36.224609 28.767578 C 35.918939 28.616297 35.048661 28.191329 34.175781 27.775391 C 33.303883 27.35992 32.54892 26.991953 32.083984 26.826172 C 31.790239 26.720488 31.431556 26.568352 30.914062 26.626953 C 30.396569 26.685553 29.88546 27.058933 29.587891 27.5 C 29.305837 27.918069 28.170387 29.258349 27.824219 29.652344 C 27.819619 29.649544 27.849659 29.663383 27.712891 29.595703 C 27.284761 29.383815 26.761157 29.203652 25.986328 28.794922 C 25.2115 28.386192 24.242255 27.782635 23.181641 26.847656 L 23.181641 26.845703 C 21.603029 25.455949 20.497272 23.711106 20.148438 23.125 C 20.171937 23.09704 20.145643 23.130901 20.195312 23.082031 L 20.197266 23.080078 C 20.553781 22.728924 20.869739 22.309521 21.136719 22.001953 C 21.515257 21.565866 21.68231 21.181437 21.863281 20.822266 C 22.223954 20.10644 22.02313 19.318742 21.814453 18.904297 L 21.814453 18.902344 C 21.828863 18.931014 21.701572 18.650157 21.564453 18.326172 C 21.426943 18.001263 21.251663 17.580039 21.064453 17.130859 C 20.690033 16.232501 20.272027 15.224912 20.023438 14.634766 L 20.023438 14.632812 C 19.730591 13.937684 19.334395 13.436908 18.816406 13.195312 C 18.298417 12.953717 17.840778 13.022402 17.822266 13.021484 L 17.820312 13.021484 C 17.450668 13.004432 17.045038 13 16.642578 13 z M 16.642578 15 C 17.028118 15 17.408214 15.004701 17.726562 15.019531 C 18.054056 15.035851 18.033687 15.037192 17.970703 15.007812 C 17.906713 14.977972 17.993533 14.968282 18.179688 15.410156 C 18.423098 15.98801 18.84317 16.999249 19.21875 17.900391 C 19.40654 18.350961 19.582292 18.773816 19.722656 19.105469 C 19.863021 19.437122 19.939077 19.622295 20.027344 19.798828 L 20.027344 19.800781 L 20.029297 19.802734 C 20.115837 19.973483 20.108185 19.864164 20.078125 19.923828 C 19.867096 20.342656 19.838461 20.445493 19.625 20.691406 C 19.29998 21.065838 18.968453 21.483404 18.792969 21.65625 C 18.639439 21.80707 18.36242 22.042032 18.189453 22.501953 C 18.016221 22.962578 18.097073 23.59457 18.375 24.066406 C 18.745032 24.6946 19.964406 26.679307 21.859375 28.347656 C 23.05276 29.399678 24.164563 30.095933 25.052734 30.564453 C 25.940906 31.032973 26.664301 31.306607 26.826172 31.386719 C 27.210549 31.576953 27.630655 31.72467 28.119141 31.666016 C 28.607627 31.607366 29.02878 31.310979 29.296875 31.007812 L 29.298828 31.005859 C 29.655629 30.601347 30.715848 29.390728 31.224609 28.644531 C 31.246169 28.652131 31.239109 28.646231 31.408203 28.707031 L 31.408203 28.708984 L 31.410156 28.708984 C 31.487356 28.736474 32.454286 29.169267 33.316406 29.580078 C 34.178526 29.990889 35.053561 30.417875 35.337891 30.558594 C 35.748225 30.761674 35.942113 30.893881 35.992188 30.894531 C 35.995572 30.982516 35.998992 31.07786 35.986328 31.222656 C 35.951258 31.624292 35.8439 32.180225 35.628906 32.775391 C 35.523582 33.066746 34.975018 33.667661 34.283203 34.105469 C 33.591388 34.543277 32.749338 34.852514 32.4375 34.898438 C 31.499896 35.036591 30.386672 35.087027 29.164062 34.703125 C 28.316336 34.437036 27.259305 34.092596 25.890625 33.509766 C 23.114812 32.325956 20.755591 30.311513 19.070312 28.537109 C 18.227674 27.649908 17.552562 26.824019 17.072266 26.199219 C 16.592866 25.575584 16.383528 25.251054 16.208984 25.021484 L 16.207031 25.019531 C 15.897202 24.609805 14 21.970851 14 19.59375 C 14 17.077989 15.168497 16.091436 15.800781 15.410156 C 16.132721 15.052495 16.495617 15 16.642578 15 z"/>
-                                </svg>
-                            </a>
-                        </span>
-                    </div>
-                </div>
-                <!-- <div>thehheth heheh eheheh</div> -->
-            </div>
-        </div>
-        <!-- <canvas class="background"></canvas> -->
-        <script src="js/particles_mini.js"></script>
-        <script src="js/particle.js"></script>
-    </body>
+	
+	
+	<div id="outer-wrap" class="site clr">
+
+		<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+		
+		<div id="wrap" class="clr">
+
+			
+
+<div id="top-bar-wrap" class="clr">
+
+	<div id="top-bar" class="clr container">
+
+		
+		<div id="top-bar-inner" class="clr">
+
+			
+	<div id="top-bar-content" class="clr has-content top-bar-left">
+
+		
+		
+			
+				<span class="topbar-content">
+
+					<i class="icon-phone" style="margin: 0 7px 0 0"></i> +2349055850046<i class="icon-envelope-letter" style="margin: 0 7px"></i>pisquaretechsolutions@gmail.com
+				</span>
+
+				
+	</div>
+<!-- #top-bar-content -->
+
+
+
+<div id="top-bar-social" class="clr top-bar-right">
+
+	<ul class="clr" aria-label="Social links">
+
+		<li class="oceanwp-twitter"><a href="#" aria-label="Twitter (opens in a new tab)" target="_blank" rel="noopener noreferrer"><i class=" fab fa-twitter" aria-hidden="true" role="img"></i></a></li>
+<li class="oceanwp-facebook"><a href="#" aria-label="Facebook (opens in a new tab)" target="_blank" rel="noopener noreferrer"><i class=" fab fa-facebook" aria-hidden="true" role="img"></i></a></li>
+<li class="oceanwp-instagram"><a href="#" aria-label="Instagram (opens in a new tab)" target="_blank" rel="noopener noreferrer"><i class=" fab fa-instagram" aria-hidden="true" role="img"></i></a></li>
+<li class="oceanwp-telegram"><a href="#" aria-label="Telegram (opens in a new tab)" target="_blank" rel="noopener noreferrer"><i class=" fab fa-telegram" aria-hidden="true" role="img"></i></a></li>
+	</ul>
+
+</div>
+<!-- #top-bar-social -->
+
+		</div>
+<!-- #top-bar-inner -->
+
+		
+	</div>
+<!-- #top-bar -->
+
+</div>
+<!-- #top-bar-wrap -->
+
+
+			
+<header id="site-header" class="minimal-header header-replace clr" data-height="125" itemscope="itemscope" itemtype="https://schema.org/WPHeader" role="banner">
+
+	
+					
+			<div id="site-header-inner" class="clr container">
+
+				
+				
+
+<div id="site-logo" class="clr" itemscope itemtype="https://schema.org/Brand">
+
+	
+	<div id="site-logo-inner" class="clr">
+
+		<a href="./index.html" class="custom-logo-link" rel="home" aria-current="page"><img width="200" height="45" src="./wp-content/uploads/2022/01/LogoMakr-9L6cVq.png" class="custom-logo" alt="Pi Square Tech Solutions Logo"></a>
+	</div>
+<!-- #site-logo-inner -->
+
+	
+	
+</div>
+<!-- #site-logo -->
+
+			<div id="site-navigation-wrap" class="clr">
+			
+			
+			
+			<nav id="site-navigation" class="navigation main-navigation clr" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" role="navigation">
+
+				<ul id="menu-main-menu" class="main-menu dropdown-menu sf-menu">
+<li id="menu-item-819" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-355 current_page_item menu-item-819"><a href="./index.html" class="menu-link"><span class="text-wrap">Home</span></a></li>
+<li id="menu-item-821" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-821"><a href="./studio/index.html" class="menu-link"><span class="text-wrap">About Us</span></a></li>
+<li id="menu-item-818" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-818"><a href="./gallery/index.html" class="menu-link"><span class="text-wrap">What we&#8217;ve done</span></a></li>
+<li id="menu-item-816" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-816"><a href="./blog/index.html" class="menu-link"><span class="text-wrap">Blog</span></a></li>
+<li id="menu-item-817" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-817"><a href="./contact/index.html" class="menu-link"><span class="text-wrap">Contact Us</span></a></li>
+<li class="search-toggle-li"><a href="javascript:void(0)" class="site-search-toggle search-header-replace-toggle" aria-label="Search website"><i class=" icon-magnifier" aria-hidden="true" role="img"></i></a></li>
+</ul>
+<div id="searchform-header-replace" class="header-searchform-wrap clr">
+<form role="search" method="get" action="./" class="header-searchform">
+		<span class="screen-reader-text">Search this website</span>
+		<input aria-label="Submit search" type="search" name="s" autocomplete="off" value="" placeholder="Type then hit enter to search...">
+					</form>
+	<span id="searchform-header-replace-close" aria-label="Close this search form"><i class=" icon-close" aria-hidden="true" role="img"></i></span>
+</div>
+<!-- #searchform-header-replace -->
+
+			</nav><!-- #site-navigation -->
+
+			
+			
+					</div>
+<!-- #site-navigation-wrap -->
+			
+		
+	
+				
+	
+	<div class="oceanwp-mobile-menu-icon clr mobile-right">
+
+		
+		
+		
+		<a href="javascript:void(0)" class="mobile-menu" aria-label="Mobile Menu">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+								<span class="oceanwp-text">Menu</span>
+				<span class="oceanwp-close-text">Close</span>
+						</a>
+
+		
+		
+		
+	</div>
+<!-- #oceanwp-mobile-menu-navbar -->
+
+	
+
+			</div>
+<!-- #site-header-inner -->
+
+			
+<div id="mobile-dropdown" class="clr">
+
+	<nav class="clr" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+
+		<ul id="menu-main-menu-1" class="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-355 current_page_item menu-item-819"><a href="./index.html" aria-current="page">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-821"><a href="./studio/index.html">About Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-818"><a href="./gallery/index.html">What we&#8217;ve done</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-816"><a href="./blog/index.html">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-817"><a href="./contact/index.html">Contact Us</a></li>
+<li class="search-toggle-li"><a href="javascript:void(0)" class="site-search-toggle search-header-replace-toggle" aria-label="Search website"><i class=" icon-magnifier" aria-hidden="true" role="img"></i></a></li>
+</ul>
+<div id="mobile-menu-search" class="clr">
+	<form aria-label="Search this website" method="get" action="./" class="mobile-searchform" role="search">
+		<input aria-label="Insert search query" value="" class="field" id="ocean-mobile-search-1" type="search" name="s" autocomplete="off" placeholder="Search">
+		<button aria-label="Submit search" type="submit" class="searchform-submit">
+			<i class=" icon-magnifier" aria-hidden="true" role="img"></i>		</button>
+					</form>
+</div>
+<!-- .mobile-menu-search -->
+
+	</nav>
+
+</div>
+
+			
+			
+		
+		
+</header><!-- #site-header -->
+
+
+			
+			<main id="main" class="site-main clr" role="main">
+
+				
+	
+	<div id="content-wrap" class="container clr">
+
+		
+		<div id="primary" class="content-area clr">
+
+			
+			<div id="content" class="site-content clr">
+
+				
+				
+<article class="single-page-article clr">
+
+	
+<div class="entry clr" itemprop="text">
+
+	
+			<div data-elementor-type="wp-page" data-elementor-id="355" class="elementor elementor-355" data-elementor-settings="[]">
+							<div class="elementor-section-wrap">
+							<section class="elementor-section elementor-top-section elementor-element elementor-element-arduvcg elementor-section-height-full elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="arduvcg" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-trebdfi" data-id="trebdfi" data-element_type="column">
+			<div class="elementor-widget-wrap">
+									</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-mcwoycn" data-id="mcwoycn" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-jmkaurx elementor-widget elementor-widget-heading" data-id="jmkaurx" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.5.4 - 23-01-2022 */
+.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style>
+<h2 class="elementor-heading-title elementor-size-default">we code your dream to reality.</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-fezgkzy elementor-widget elementor-widget-text-editor" data-id="fezgkzy" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.5.4 - 23-01-2022 */
+.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:#818a91;color:#fff}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap{color:#818a91;border:3px solid;background-color:transparent}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap{margin-top:8px}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter{width:1em;height:1em}.elementor-widget-text-editor .elementor-drop-cap{float:left;text-align:center;line-height:1;font-size:50px}.elementor-widget-text-editor .elementor-drop-cap-letter{display:inline-block}</style>				<p>If you can dream it, then we can do it.</p>
+<p>We&#8217;re out to solve your problems</p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-rwyawhg elementor-widget elementor-widget-button" data-id="rwyawhg" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">See More</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-vnynvjk elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="vnynvjk" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-pjfmwov" data-id="pjfmwov" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-wzrxkkb elementor-widget elementor-widget-heading" data-id="wzrxkkb" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Welcome!</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-vufcitf elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="vufcitf" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.5.4 - 23-01-2022 */
+.elementor-widget-divider{--divider-border-style:none;--divider-border-width:1px;--divider-color:#2c2c2c;--divider-icon-size:20px;--divider-element-spacing:10px;--divider-pattern-height:24px;--divider-pattern-size:20px;--divider-pattern-url:none;--divider-pattern-repeat:repeat-x}.elementor-widget-divider .elementor-divider{display:-webkit-box;display:-ms-flexbox;display:flex}.elementor-widget-divider .elementor-divider__text{font-size:15px;line-height:1;max-width:95%}.elementor-widget-divider .elementor-divider__element{margin:0 var(--divider-element-spacing);-ms-flex-negative:0;flex-shrink:0}.elementor-widget-divider .elementor-icon{font-size:var(--divider-icon-size)}.elementor-widget-divider .elementor-divider-separator{display:-webkit-box;display:-ms-flexbox;display:flex;margin:0;direction:ltr}.elementor-widget-divider--view-line_icon .elementor-divider-separator,.elementor-widget-divider--view-line_text .elementor-divider-separator{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.elementor-widget-divider--view-line_icon .elementor-divider-separator:after,.elementor-widget-divider--view-line_icon .elementor-divider-separator:before,.elementor-widget-divider--view-line_text .elementor-divider-separator:after,.elementor-widget-divider--view-line_text .elementor-divider-separator:before{display:block;content:"";border-bottom:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;border-top:var(--divider-border-width) var(--divider-border-style) var(--divider-color)}.elementor-widget-divider--element-align-left .elementor-divider .elementor-divider-separator>.elementor-divider__svg:first-of-type{-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0;-ms-flex-negative:100;flex-shrink:100}.elementor-widget-divider--element-align-left .elementor-divider-separator:before{content:none}.elementor-widget-divider--element-align-left .elementor-divider__element{margin-left:0}.elementor-widget-divider--element-align-right .elementor-divider .elementor-divider-separator>.elementor-divider__svg:last-of-type{-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0;-ms-flex-negative:100;flex-shrink:100}.elementor-widget-divider--element-align-right .elementor-divider-separator:after{content:none}.elementor-widget-divider--element-align-right .elementor-divider__element{margin-right:0}.elementor-widget-divider:not(.elementor-widget-divider--view-line_text):not(.elementor-widget-divider--view-line_icon) .elementor-divider-separator{border-top:var(--divider-border-width) var(--divider-border-style) var(--divider-color)}.elementor-widget-divider--separator-type-pattern{--divider-border-style:none}.elementor-widget-divider--separator-type-pattern.elementor-widget-divider--view-line .elementor-divider-separator,.elementor-widget-divider--separator-type-pattern:not(.elementor-widget-divider--view-line) .elementor-divider-separator:after,.elementor-widget-divider--separator-type-pattern:not(.elementor-widget-divider--view-line) .elementor-divider-separator:before,.elementor-widget-divider--separator-type-pattern:not([class*=elementor-widget-divider--view]) .elementor-divider-separator{width:100%;min-height:var(--divider-pattern-height);-webkit-mask-size:var(--divider-pattern-size) 100%;mask-size:var(--divider-pattern-size) 100%;-webkit-mask-repeat:var(--divider-pattern-repeat);mask-repeat:var(--divider-pattern-repeat);background-color:var(--divider-color);-webkit-mask-image:var(--divider-pattern-url);mask-image:var(--divider-pattern-url)}.elementor-widget-divider--no-spacing{--divider-pattern-size:auto}.elementor-widget-divider--bg-round{--divider-pattern-repeat:round}.rtl .elementor-widget-divider .elementor-divider__text{direction:rtl}</style>		<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-vuymnua elementor-widget elementor-widget-heading" data-id="vuymnua" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">We offer the best solutions in Software &amp; Website development and Social Media Marketing!</h2>		</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-wetlkxn elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="wetlkxn" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-oiqxoym" data-id="oiqxoym" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-cxcmpdt elementor-widget elementor-widget-image" data-id="cxcmpdt" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.5.4 - 23-01-2022 */
+.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>												<img width="2560" height="1707" src="./wp-content/uploads/2022/01/responsive-scaled.jpg" class="attachment-full size-full" alt="responsive website" loading="lazy" srcset="./wp-content/uploads/2022/01/responsive-scaled.jpg 2560w, ./wp-content/uploads/2022/01/responsive-300x200.jpg 300w, ./wp-content/uploads/2022/01/responsive-1024x683.jpg 1024w, ./wp-content/uploads/2022/01/responsive-768x512.jpg 768w, ./wp-content/uploads/2022/01/responsive-1536x1024.jpg 1536w, ./wp-content/uploads/2022/01/responsive-2048x1365.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px">															</div>
+				</div>
+				<div class="elementor-element elementor-element-afcmldk elementor-widget elementor-widget-heading" data-id="afcmldk" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Responsiveness</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-oowxfkk elementor-widget elementor-widget-text-editor" data-id="oowxfkk" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p><span style="color: #404042; font-family: Montserrat, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; text-align: justify;">Why will your website be adaptable to only one device. We build sites that are responsive on all devices ranging from Mobile Phones to &#8220;Mega&#8221; Screen Computers.</span></p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-legksge elementor-widget elementor-widget-spacer" data-id="legksge" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-vupdgst" data-id="vupdgst" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-klptxbr elementor-widget elementor-widget-image" data-id="klptxbr" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="2560" height="1707" src="./wp-content/uploads/2022/01/seo-scaled.jpg" class="attachment-full size-full" alt="Search Engine Optimization" loading="lazy" srcset="./wp-content/uploads/2022/01/seo-scaled.jpg 2560w, ./wp-content/uploads/2022/01/seo-300x200.jpg 300w, ./wp-content/uploads/2022/01/seo-1024x683.jpg 1024w, ./wp-content/uploads/2022/01/seo-768x512.jpg 768w, ./wp-content/uploads/2022/01/seo-1536x1024.jpg 1536w, ./wp-content/uploads/2022/01/seo-2048x1365.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px">															</div>
+				</div>
+				<div class="elementor-element elementor-element-ptomfrn elementor-widget elementor-widget-heading" data-id="ptomfrn" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">SEO Friendly </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-abdsmck elementor-widget elementor-widget-text-editor" data-id="abdsmck" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p><span style="color: #404042; font-family: Montserrat, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; text-align: justify;">We build sites that is seen on the first page of keyword search on the Search Engines. </span><span style="color: #404042; font-family: Montserrat, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; text-align: justify;">Our sites are pretty fast</span></p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-ybtwdsu elementor-widget elementor-widget-spacer" data-id="ybtwdsu" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-jyhcrvx" data-id="jyhcrvx" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-apxfrus elementor-widget elementor-widget-image" data-id="apxfrus" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img src="./wp-content/uploads/elementor/thumbs/social-media2-scaled-pjptp749ul9mn9k3hjidrx8mr1v0uc1znrgcgjl534.jpg" title="social media2" alt="social media2">															</div>
+				</div>
+				<div class="elementor-element elementor-element-qkmsedb elementor-widget elementor-widget-heading" data-id="qkmsedb" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Social Media Marketing</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-slrqxvv elementor-widget elementor-widget-text-editor" data-id="slrqxvv" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p><span style="color: #404042; font-family: Montserrat, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; text-align: justify;">We will help you manage your Social Media Pages through content creation that will drive more traffic to your product(s).</span></p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-ucqtwmr elementor-widget elementor-widget-spacer" data-id="ucqtwmr" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-rejxuiu elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="rejxuiu" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-qevarhe" data-id="qevarhe" data-element_type="column">
+			<div class="elementor-widget-wrap">
+									</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-sybclyl" data-id="sybclyl" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-anvgfex elementor-widget elementor-widget-heading" data-id="anvgfex" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">We will help make your life easier.</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-jhvrfuj elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="jhvrfuj" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-seasuum elementor-widget elementor-widget-text-editor" data-id="seasuum" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>We use the latest technologies.</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-ottxukh elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ottxukh" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-wkxtsyq" data-id="wkxtsyq" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-hcmjsxe elementor-widget elementor-widget-image" data-id="hcmjsxe" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="2560" height="1220" src="./wp-content/uploads/2022/01/passion-scaled.jpg" class="attachment-full size-full" alt="passion brought us here" loading="lazy" srcset="./wp-content/uploads/2022/01/passion-scaled.jpg 2560w, ./wp-content/uploads/2022/01/passion-300x143.jpg 300w, ./wp-content/uploads/2022/01/passion-1024x488.jpg 1024w, ./wp-content/uploads/2022/01/passion-768x366.jpg 768w, ./wp-content/uploads/2022/01/passion-1536x732.jpg 1536w, ./wp-content/uploads/2022/01/passion-2048x976.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px">															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-fhhdcys" data-id="fhhdcys" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-qjxjzhx elementor-widget elementor-widget-heading" data-id="qjxjzhx" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">We specialize in...</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-mxfdelq elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="mxfdelq" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-bsdades elementor-widget elementor-widget-text-editor" data-id="bsdades" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<ul>
+<li style="margin-bottom: 20px;">Custom Software Development (Tell us your challenge, we code it out for you)</li>
+<li style="margin-bottom: 20px;">Mobile App Development.</li>
+<li style="margin-bottom: 20px;">Desktop App Development.</li>
+<li style="margin-bottom: 20px;">Social Media Marketing</li>
+</ul>						</div>
+				</div>
+				<div class="elementor-element elementor-element-mhjhyds elementor-widget elementor-widget-button" data-id="mhjhyds" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">Learn More</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-wauyzkr elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="wauyzkr" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-znovkyl" data-id="znovkyl" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-gxrnlos elementor-widget elementor-widget-heading" data-id="gxrnlos" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">What my clients say</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-oemhutd elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="oemhutd" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-yyihpqe elementor-widget elementor-widget-heading" data-id="yyihpqe" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">How yoga has changed lives? Hear from our newest members.</h2>		</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-chwnukb elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="chwnukb" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-ejiohww" data-id="ejiohww" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-oshvkpw elementor-widget elementor-widget-testimonial" data-id="oshvkpw" data-element_type="widget" data-widget_type="testimonial.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.5.4 - 23-01-2022 */
+.elementor-testimonial-wrapper{overflow:hidden;text-align:center}.elementor-testimonial-wrapper .elementor-testimonial-content{font-size:1.3em;margin-bottom:20px}.elementor-testimonial-wrapper .elementor-testimonial-name{line-height:1.5;display:block}.elementor-testimonial-wrapper .elementor-testimonial-job{font-size:.85em;display:block}.elementor-testimonial-wrapper .elementor-testimonial-meta{width:100%;line-height:1}.elementor-testimonial-wrapper .elementor-testimonial-meta-inner{display:inline-block}.elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-details,.elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-image{display:table-cell;vertical-align:middle}.elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-image img{width:60px;height:60px;-webkit-border-radius:50%;border-radius:50%;-o-object-fit:cover;object-fit:cover;max-width:none}.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-aside .elementor-testimonial-image{padding-right:15px}.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-aside .elementor-testimonial-details{text-align:left}.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-details,.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-image{display:block}.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-image{margin-bottom:20px}</style>		<div class="elementor-testimonial-wrapper">
+							<div class="elementor-testimonial-content">Excellent work done on the RCCGCODMYC website. Pi Square Tech practically came up with a great design within a short period of time as we needed to launch on time. Even modifications and changes were done on time without impacting the overall look and feel. Thanks to them our online presence looks better and the website looks great. Personally, I will recommend anyone that is looking for a custom built website to reach out and give a trial. You'll definitely be impressed.</div>
+			
+						<div class="elementor-testimonial-meta elementor-has-image elementor-testimonial-image-position-aside">
+				<div class="elementor-testimonial-meta-inner">
+											<div class="elementor-testimonial-image">
+							<img width="563" height="772" src="./wp-content/uploads/2022/02/olajubu.jpg" class="attachment-full size-full" alt="Olatunbosun Olajubu" loading="lazy">						</div>
+					
+										<div class="elementor-testimonial-details">
+														<div class="elementor-testimonial-name">Olatunbosun Olajubu</div>
+																						<div class="elementor-testimonial-job">Minister in RCCG</div>
+													</div>
+									</div>
+			</div>
+					</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-mirkquy elementor-widget elementor-widget-spacer" data-id="mirkquy" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-wgtfjii" data-id="wgtfjii" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-eigxqrv elementor-widget elementor-widget-testimonial" data-id="eigxqrv" data-element_type="widget" data-widget_type="testimonial.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-testimonial-wrapper">
+							<div class="elementor-testimonial-content">Working with Pi Square Tech Solutions has been a great experience. They are professionals and they deliver projects on time. I highly recommend them.</div>
+			
+						<div class="elementor-testimonial-meta elementor-has-image elementor-testimonial-image-position-aside">
+				<div class="elementor-testimonial-meta-inner">
+											<div class="elementor-testimonial-image">
+							<img width="300" height="280" src="./wp-content/uploads/2022/02/avatar.jpg" class="attachment-full size-full" alt="Samuel Jerry" loading="lazy">						</div>
+					
+										<div class="elementor-testimonial-details">
+														<div class="elementor-testimonial-name">Samuel Jerry</div>
+																						<div class="elementor-testimonial-job">C0-founder, the Kreative Stack</div>
+													</div>
+									</div>
+			</div>
+					</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-norbvlz elementor-widget elementor-widget-spacer" data-id="norbvlz" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-qvwrdcl elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="qvwrdcl" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-thaojlb" data-id="thaojlb" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-bjiztsz elementor-widget elementor-widget-text-editor" data-id="bjiztsz" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>&#8220;Connect with us and let&#8217;s create that solution together&#8221;</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-a658dc7 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="a658dc7" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a46097e" data-id="a46097e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-9fcf213 elementor-widget elementor-widget-heading" data-id="9fcf213" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><h2 data-elementor-setting-key="title" data-pen-placeholder="Type Here..." style="font-variant-ligatures: normal; font-variant-caps: normal; font-family: &quot;Roboto Slab&quot;; font-style: normal;">
+<span style="color: rgb(41, 41, 41); font-size: 34px; font-weight: 300;">Our Projects</span><span style="color: rgb(41, 41, 41); font-size: 34px; font-weight: 300;"></span><br>
+</h2></h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-fe2e758 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="fe2e758" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-6750c00 elementor-widget elementor-widget-heading" data-id="6750c00" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">We offer the best solutions in Software &amp; Website development and Social Media Marketing!</h2>		</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-7d4813c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7d4813c" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-c6f0a7b" data-id="c6f0a7b" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-430449f elementor-widget elementor-widget-image" data-id="430449f" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://etoyin.github.io/canode">
+							<img width="1341" height="623" src="./wp-content/uploads/2022/01/canode1.png" class="attachment-full size-full" alt="" loading="lazy" srcset="./wp-content/uploads/2022/01/canode1.png 1341w, ./wp-content/uploads/2022/01/canode1-300x139.png 300w, ./wp-content/uploads/2022/01/canode1-1024x476.png 1024w, ./wp-content/uploads/2022/01/canode1-768x357.png 768w" sizes="(max-width: 1341px) 100vw, 1341px">								</a>
+															</div>
+				</div>
+				<div class="elementor-element elementor-element-8d55941 elementor-widget elementor-widget-heading" data-id="8d55941" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Canode</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-e3c02a5 elementor-widget elementor-widget-text-editor" data-id="e3c02a5" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<span style="color: #404042; font-family: Montserrat, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; text-align: justify;">A Website for a renewable energy company</span>						</div>
+				</div>
+				<div class="elementor-element elementor-element-5c43ea6 elementor-widget elementor-widget-spacer" data-id="5c43ea6" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-1158ab5" data-id="1158ab5" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-ebdbc94 elementor-widget elementor-widget-image" data-id="ebdbc94" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://voiceout.netilify.app/">
+							<img width="1355" height="631" src="./wp-content/uploads/2022/01/voiceout.png" class="attachment-full size-full" alt="" loading="lazy" srcset="./wp-content/uploads/2022/01/voiceout.png 1355w, ./wp-content/uploads/2022/01/voiceout-300x140.png 300w, ./wp-content/uploads/2022/01/voiceout-1024x477.png 1024w, ./wp-content/uploads/2022/01/voiceout-768x358.png 768w" sizes="(max-width: 1355px) 100vw, 1355px">								</a>
+															</div>
+				</div>
+				<div class="elementor-element elementor-element-96fe26d elementor-widget elementor-widget-heading" data-id="96fe26d" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">VoiceOut</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-63df8a3 elementor-widget elementor-widget-text-editor" data-id="63df8a3" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<span style="color: #404042; font-family: Montserrat, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; text-align: justify;">VoiceOut, an app created to give the oppressed a voice</span>						</div>
+				</div>
+				<div class="elementor-element elementor-element-9403dec elementor-widget elementor-widget-spacer" data-id="9403dec" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-cd158a7" data-id="cd158a7" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-fb6ee74 elementor-widget elementor-widget-image" data-id="fb6ee74" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="http://rccgcodmyc.herokuapp.com/">
+							<img src="./wp-content/uploads/elementor/thumbs/codApp-pjth7fylvs3cbasvtg1lor3sutd8hdok83pbyy2o00.png" title="codApp" alt="MEMBER MANAGEMENT FORM">								</a>
+															</div>
+				</div>
+				<div class="elementor-element elementor-element-1e5a5c5 elementor-widget elementor-widget-heading" data-id="1e5a5c5" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">RCCG COD MYC</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-5838957 elementor-widget elementor-widget-text-editor" data-id="5838957" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<span style="color: #404042; font-family: Montserrat, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; text-align: justify;">Members Management Site</span>						</div>
+				</div>
+				<div class="elementor-element elementor-element-fbe6cd7 elementor-widget elementor-widget-spacer" data-id="fbe6cd7" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-rojkzax elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="rojkzax" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-jqopnpf" data-id="jqopnpf" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-wjbhjqp elementor-widget elementor-widget-heading" data-id="wjbhjqp" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Connect with us</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-wvoomew elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="wvoomew" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-rojaugv elementor-widget elementor-widget-heading" data-id="rojaugv" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Let's solve that problem together</h2>		</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-jupsfso elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="jupsfso" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-mitgidk" data-id="mitgidk" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-cdclnjx elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="cdclnjx" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.5.4 - 23-01-2022 */
+@media (min-width:768px){.elementor-widget-icon-box.elementor-position-left .elementor-icon-box-wrapper,.elementor-widget-icon-box.elementor-position-right .elementor-icon-box-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex}.elementor-widget-icon-box.elementor-position-left .elementor-icon-box-icon,.elementor-widget-icon-box.elementor-position-right .elementor-icon-box-icon{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto}.elementor-widget-icon-box.elementor-position-right .elementor-icon-box-wrapper{text-align:right;-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.elementor-widget-icon-box.elementor-position-left .elementor-icon-box-wrapper{text-align:left;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}.elementor-widget-icon-box.elementor-position-top .elementor-icon-box-img{margin:auto}.elementor-widget-icon-box.elementor-vertical-align-top .elementor-icon-box-wrapper{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.elementor-widget-icon-box.elementor-vertical-align-middle .elementor-icon-box-wrapper{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.elementor-widget-icon-box.elementor-vertical-align-bottom .elementor-icon-box-wrapper{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}}@media (max-width:767px){.elementor-widget-icon-box .elementor-icon-box-icon{margin-left:auto!important;margin-right:auto!important;margin-bottom:15px}}.elementor-widget-icon-box .elementor-icon-box-wrapper{text-align:center}.elementor-widget-icon-box .elementor-icon-box-title a{color:inherit}.elementor-widget-icon-box .elementor-icon-box-content{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.elementor-widget-icon-box .elementor-icon-box-description{margin:0}</style>		<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon">
+				<span class="elementor-icon elementor-animation-">
+				<i aria-hidden="true" class="far fa-map"></i>				</span>
+			</div>
+						<div class="elementor-icon-box-content">
+				<h3 class="elementor-icon-box-title">
+					<span>
+						Address					</span>
+				</h3>
+									<p class="elementor-icon-box-description">
+						9, Michael Adesina Street<br>
+Mowe Ogun State.					</p>
+							</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-lxnjvop elementor-widget elementor-widget-spacer" data-id="lxnjvop" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-ozfwznk" data-id="ozfwznk" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-mzzjlnz elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="mzzjlnz" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon">
+				<span class="elementor-icon elementor-animation-">
+				<i aria-hidden="true" class="fas fa-phone"></i>				</span>
+			</div>
+						<div class="elementor-icon-box-content">
+				<h3 class="elementor-icon-box-title">
+					<span>
+						Phone					</span>
+				</h3>
+									<p class="elementor-icon-box-description">
+						+2349055850046<br>
++2347081607729					</p>
+							</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-bgtmhzt elementor-widget elementor-widget-spacer" data-id="bgtmhzt" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-whueyyz" data-id="whueyyz" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-tabocnv elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="tabocnv" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon">
+				<span class="elementor-icon elementor-animation-">
+				<i aria-hidden="true" class="far fa-envelope"></i>				</span>
+			</div>
+						<div class="elementor-icon-box-content">
+				<h3 class="elementor-icon-box-title">
+					<span>
+						Email Address					</span>
+				</h3>
+									<p class="elementor-icon-box-description">
+						pisquaretechsolutions@gmail.com<br>
+toyinadesina60@gmail.com					</p>
+							</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-wbzdojx elementor-widget elementor-widget-spacer" data-id="wbzdojx" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-svejjzd" data-id="svejjzd" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-engigvc elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="engigvc" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon">
+				<span class="elementor-icon elementor-animation-">
+				<i aria-hidden="true" class="fas fa-calendar-alt"></i>				</span>
+			</div>
+						<div class="elementor-icon-box-content">
+				<h3 class="elementor-icon-box-title">
+					<span>
+						Business Hours					</span>
+				</h3>
+									<p class="elementor-icon-box-description">
+						Monday/Friday: 4pm to 11:59pm<br>
+Saturday: 9am to 12am					</p>
+							</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-lgwumdv elementor-widget elementor-widget-spacer" data-id="lgwumdv" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+						</div>
+					</div>
+		
+	
+</div>
+
+</article>
+
+				
+			</div>
+<!-- #content -->
+
+			
+		</div>
+<!-- #primary -->
+
+		
+	</div>
+<!-- #content-wrap -->
+
+	
+
+	</main><!-- #main -->
+
+	
+	
+	
+		
+<footer id="footer" class="site-footer" itemscope="itemscope" itemtype="https://schema.org/WPFooter" role="contentinfo">
+
+	
+	<div id="footer-inner" class="clr">
+
+		
+
+<div id="footer-widgets" class="oceanwp-row clr">
+
+	
+	<div class="footer-widgets-inner container">
+
+					<div class="footer-box span_1_of_4 col col-1">
+				<div id="text-2" class="footer-widget widget_text clr">
+<h4 class="widget-title">General inquiries</h4>			<div class="textwidget">pisquaretechsolutions@gmail.com</div>
+		</div>			</div>
+<!-- .footer-one-box -->
+
+							<div class="footer-box span_1_of_4 col col-2">
+					<div id="text-3" class="footer-widget widget_text clr">
+<h4 class="widget-title">Studio Address</h4>			<div class="textwidget">
+<p>9, Michael Adesina Street<br>
+Mowe Ogun State.</p>
+</div>
+		</div>				</div>
+<!-- .footer-one-box -->
+				
+							<div class="footer-box span_1_of_4 col col-3 ">
+					<div id="text-4" class="footer-widget widget_text clr">
+<h4 class="widget-title">Opentime</h4>			<div class="textwidget">4:00pm - 11:59pm</div>
+		</div>				</div>
+<!-- .footer-one-box -->
+				
+							<div class="footer-box span_1_of_4 col col-4">
+									</div>
+<!-- .footer-box -->
+				
+			
+	</div>
+<!-- .container -->
+
+	
+</div>
+<!-- #footer-widgets -->
+
+
+
+<div id="footer-bottom" class="clr no-footer-nav">
+
+	
+	<div id="footer-bottom-inner" class="container clr">
+
+		
+		
+			<div id="copyright" class="clr" role="contentinfo">
+				© Copyright - <span id="year">2022</span> Pi Square Tech Solutions
+
+			</div>
+<!-- #copyright -->
+
+			
+	</div>
+<!-- #footer-bottom-inner -->
+
+	
+</div>
+<!-- #footer-bottom -->
+
+
+	</div>
+<!-- #footer-inner -->
+
+	
+</footer><!-- #footer -->
+
+	
+	
+</div>
+<!-- #wrap -->
+
+
+</div>
+<!-- #outer-wrap -->
+
+
+
+<a aria-label="Scroll to the top of the page" href="#" id="scroll-top" class="scroll-top-right"><i class=" fa fa-angle-up" aria-hidden="true" role="img"></i></a>
+
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0.49803921568627"></fefuncr><fefuncg type="table" tablevalues="0 0.49803921568627"></fefuncg><fefuncb type="table" tablevalues="0 0.49803921568627"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 1"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0 1"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 1"></fefuncr><fefuncg type="table" tablevalues="0 0.27843137254902"></fefuncg><fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0"></fefuncr><fefuncg type="table" tablevalues="0 0.64705882352941"></fefuncg><fefuncb type="table" tablevalues="0 1"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.78039215686275 1"></fefuncr><fefuncg type="table" tablevalues="0 0.94901960784314"></fefuncg><fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0.44705882352941 0.4"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.098039215686275 1"></fefuncr><fefuncg type="table" tablevalues="0 0.66274509803922"></fefuncg><fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><script src="./wp-includes/js/imagesloaded.min.js?ver=4.1.4" id="imagesloaded-js"></script>
+<script src="./wp-content/themes/oceanwp/assets/js/vendors/isotope.pkgd.min.js?ver=3.0.6" id="ow-isotop-js"></script>
+<script src="./wp-content/themes/oceanwp/assets/js/vendors/flickity.pkgd.min.js?ver=3.1.2" id="ow-flickity-js"></script>
+<script src="./wp-content/themes/oceanwp/assets/js/vendors/sidr.js?ver=3.1.2" id="ow-sidr-js"></script>
+<script src="./wp-content/themes/oceanwp/assets/js/vendors/magnific-popup.min.js?ver=3.1.2" id="ow-magnific-popup-js"></script>
+<script id="oceanwp-main-js-extra">
+var oceanwpLocalize = {"nonce":"756186495b","isRTL":"","menuSearchStyle":"header_replace","mobileMenuSearchStyle":"disabled","sidrSource":null,"sidrDisplace":"1","sidrSide":"left","sidrDropdownTarget":"link","verticalHeaderTarget":"link","customSelects":".woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select","ajax_url":".\/wp-admin\/admin-ajax.php"};
+</script>
+<script src="./wp-content/themes/oceanwp/assets/js/theme.vanilla.min.js?ver=3.1.2" id="oceanwp-main-js"></script>
+<!--[if lt IE 9]>
+<script src='./wp-content/themes/oceanwp/assets/js/third/html5.min.js?ver=3.1.2' id='html5shiv-js'></script>
+<![endif]-->
+<script src="./wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.5.4" id="elementor-webpack-runtime-js"></script>
+<script src="./wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.5.4" id="elementor-frontend-modules-js"></script>
+<script src="./wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2" id="elementor-waypoints-js"></script>
+<script src="./wp-includes/js/jquery/ui/core.min.js?ver=1.13.0" id="jquery-ui-core-js"></script>
+<script id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.5.4","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"a11y_improvements":true,"e_import_export":true,"additional_custom_breakpoints":true,"e_hidden_wordpress_widgets":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true},"urls":{"assets":".\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":355,"title":"Pi%20Square%20Tech%20Solutions%20%E2%80%93%20Get%20your%20custom%20websites%2C%20webapp%2C%20softwares%2C%20mobile%20app.","excerpt":"","featuredImage":false}};
+</script>
+<script src="./wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.5.4" id="elementor-frontend-js"></script>
+<script src="./wp-includes/js/underscore.min.js?ver=1.13.1" id="underscore-js"></script>
+<script id="wp-util-js-extra">
+var _wpUtilSettings = {"ajax":{"url":"\/wordpress\/wp-admin\/admin-ajax.php"}};
+</script>
+<script src="./wp-includes/js/wp-util.min.js?ver=5.9" id="wp-util-js"></script>
+<script id="wpforms-elementor-js-extra">
+var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"};
+</script>
+<script src="./wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min.js?ver=1.7.2" id="wpforms-elementor-js"></script>
+</body>
 </html>
